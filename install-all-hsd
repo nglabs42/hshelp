@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
 # install-all-hsd v.1.3.0
-# Installs handshake hsd (https://github.com/handshake-org/hsd)
-# on Ubuntu (20.04 LTS preferred) or Debian
-
+# Installs handshake hsd (https://github.com/handshake-org/hsd) with wallet 
+# on Ubuntu or Debian
+# 
 # Make sure you have at least 35GB storage free on your system!
 
 HSDDATA="$HOME/.hsd"
-LISTEN="true"
-MAXINBOUND=800
+LISTEN="false"
+MAXOUTBOUND=800
 
 ####
 if [ ! -f "/etc/debian_version" ]; then
@@ -76,7 +76,7 @@ function installkeys {
 }
 
 function verifykeys {
-  git verify-tag latest
+  git verify-tag master
   RC=$?
   if [ $RC -ne 0 ]; then
     echo -e "${R}Installed code can't be verified!${E}"
@@ -88,7 +88,7 @@ function verifykeys {
 function install_hsd {
   cd ${HOME}
 
-  git clone --depth 1 --branch latest https://github.com/handshake-org/hsd.git
+  git clone https://github.com/handshake-org/hsd.git
 
   cd hsd
 
@@ -122,7 +122,7 @@ Restart=always
 RestartSec=1
 User=root
 Environment=HSD_PREFIX=$HSDDATA
-ExecStart=${NODE} ${HOME}/hsd/bin/hsd --no-wallet
+ExecStart=${NODE} ${HOME}/hsd/bin/hsd
 
 [Install]
 WantedBy=multi-user.target
@@ -140,7 +140,7 @@ function config_hsd {
   HSDCFGFILE="${HSDDATA}/hsd.conf"
 
   HSDCFGTXT=$(echo -e "log-level: info
-listen: $1
+listen: false
 bip37: true
 public-host: $MYIP
 max-inbound: $MAXINBOUND
