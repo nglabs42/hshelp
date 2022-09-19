@@ -1,4 +1,4 @@
-# hshelp - Tools for Handshake
+# hshelp - Tools for Handshake - More updates to come.
 
 ## install-all-hsd
 
