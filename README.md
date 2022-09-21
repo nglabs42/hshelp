@@ -8,7 +8,7 @@ This script installs a Handshake full node (https://github.com/handshake-org/hsd
 * Ubuntu or Debian
 * Static public IP address - this may not be required will look into it
 * 2GB RAM
-* Enough storage space, with the current chain 35GB - check via ```df -h```
+* Enough storage space, I was running out of space with a 50GB (had 1.2 GB left of free space so had to do a reimage of my machine)  - check via ```df -h```
 
 If you install this on a new deployed system and currently work with user ```root``` consider using a different user with root privilegies.
 
