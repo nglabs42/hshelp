@@ -36,7 +36,7 @@ Per default all blockchain data, config and log files are under ```${HOME}/.hsd`
 
 During this first chain sync hsd is still running as a non listening node. After you restart hsd or reboot - which also makes sense since most probably some installed components might require a reboot anyway - the node allows 800 inbound connections. Those could be other full nodes but also SPV nodes like [hnsd](https://github.com/handshake-org/hnsd) or [Fingertip](https://github.com/imperviousinc/fingertip). Running listening public full nodes are essential for Handshake, you do great support by running one!
 
-### Further Settings - to validate; currently will not open these ports
+### Further Settings - ONLY IF YOU UPDATE TO LISTEN: TRUE
 
 The node listens to port ```12038``` and ```44806```. Make sure you allowed those ports on incoming traffic.
 
