@@ -13,7 +13,7 @@ This script installs a Handshake full node (https://github.com/handshake-org/hsd
 If you install this on a new deployed system and currently work with user ```root``` consider using a different user with root privilegies.
 
 ```
-adduser -m -d /home/<Username> <Username>
+adduser <Username>
 usermod -aG sudo <Username>
 su - <Username>
 ````
