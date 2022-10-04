@@ -8,8 +8,7 @@
 
 HSDDATA="$HOME/.hsd"
 LISTEN="false"
-MAXINBOUND=0
-MAXOUTBOUND=800
+
 
 ####
 if [ ! -f "/etc/debian_version" ]; then
@@ -129,12 +128,11 @@ function config_hsd {
 
   HSDCFGFILE="${HSDDATA}/hsd.conf"
 
-  HSDCFGTXT=$(echo -e "log-level: info
+  HSDCFGTXT=$(echo -e "log-level: spam
 listen: false
 bip37: true
-public-host: $MYIP
-max-inbound: $MAXINBOUND
-max-outbound: $MAXOUTBOUND
+index: true
+index-address: true
 ")
 
   mkdir -p $HSDDATA
@@ -164,19 +162,13 @@ $(cat $HSDCFGFILE)
 
 Syncing the chain may take few hours (depending on hardware/env.)
 
-Currently hsd is set as non-listening node.
+Currently hsd is set as non-listening node, if you would like to run be a full node
+please update your config file located at ~/.hsd/hsd.conf
 
 Some Commands:
 hsd service status:   ${B}systemctl status hsd${E}
 hsd service restart:  ${B}sudo systemctl restart hsd${E}
 "
-
-if [ "$LISTEN" = "true" ]; then
-  echo -e "${G}After the chain is 100% synced${E} please ${G}restart hsd${E} or even reboot
-your system to change hsd to a listening public full node with $MAXINBOUND
-allowed inbound connections. This is great support for Handshake!"
-fi
-}
 
 function show_block {
   echo -e "${NL}hsd is running as a service, you can stop this script at any time (Ctrl-C)${NL}"
