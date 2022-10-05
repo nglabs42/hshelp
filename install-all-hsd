@@ -8,8 +8,7 @@
 
 HSDDATA="$HOME/.hsd"
 LISTEN="false"
-MAXINBOUND=0
-MAXOUTBOUND=800
+
 
 ####
 if [ ! -f "/etc/debian_version" ]; then
@@ -133,8 +132,6 @@ function config_hsd {
 listen: false
 bip37: true
 public-host: $MYIP
-max-inbound: $MAXINBOUND
-max-outbound: $MAXOUTBOUND
 ")
 
   mkdir -p $HSDDATA
