@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-# install-all-hsd v.1.3.0
+# install-all-hsd v.1.5.0
 # Installs handshake hsd (https://github.com/handshake-org/hsd) with wallet 
 # on Ubuntu or Debian
 # 
-# Make sure you have at least 35GB storage free on your system!
+# Make sure you have at least 50GB storage free on your system!
 
 HSDDATA="$HOME/.hsd"
 LISTEN="false"
