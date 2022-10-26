@@ -8,6 +8,7 @@
 
 HSDDATA="$HOME/.hsd"
 LISTEN="false"
+MAX_INBOUND="1500"
 
 
 ####
@@ -128,10 +129,12 @@ function config_hsd {
 
   HSDCFGFILE="${HSDDATA}/hsd.conf"
 
-  HSDCFGTXT=$(echo -e "log-level: info
-listen: false
+  HSDCFGTXT=$(echo -e 
+"log-level: info
+listen: true
 bip37: true
 public-host: $MYIP
+max-inbound: $MAX_INBOUND
 ")
 
   mkdir -p $HSDDATA
