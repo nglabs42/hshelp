@@ -128,13 +128,12 @@ function config_hsd {
   MYIP=$(dig @resolver4.opendns.com myip.opendns.com +short)
 
   HSDCFGFILE="${HSDDATA}/hsd.conf"
-
-  HSDCFGTXT=$(echo -e 
-"log-level: info
-listen: true
+  
+  HSDCFGTXT=$(echo -e "log-level: info
+listen: $1
 bip37: true
 public-host: $MYIP
-max-inbound: $MAX_INBOUND
+max-inbound: $MAXINBOUND
 ")
 
   mkdir -p $HSDDATA
