@@ -29,7 +29,7 @@ git clone https://github.com/nglabs42/hshelp
 hshelp/install-all-hsd
 ```
 
-Per default all blockchain data, config and log files are under ```${HOME}/.hsd```. You can set an alternative path by adding it as parameter like ```hshelp/install-all-hsd /some/where/else```.
+Per default all blockchain data, config and log files are under ```/opt/hsd_data```. You can set an alternative path by adding it as parameter like ```hshelp/install-all-hsd /some/where/else```.
 
 ![2BDA7A6E-53AD-4F8A-B9F0-2E2E1A8C9AC9_4_5005_c](https://user-images.githubusercontent.com/46194732/153889206-d0c6f38f-9829-4d83-a462-052e02cdd40a.jpeg)
 
