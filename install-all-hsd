@@ -6,7 +6,7 @@
 # 
 # Make sure you have at least 50GB storage free on your system!
 
-HSDDATA="$HOME/.hsd"
+HSDDATA="/opt/hsd_data"
 LISTEN="false"
 MAX_INBOUND="1500"
 
